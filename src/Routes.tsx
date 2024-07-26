@@ -4,14 +4,21 @@ import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import colors from './constants/colors';
 import RootStackParamList from './types/RootStackParamList';
+import RootDrawerParamList from './types/RootDrawerParamList.ts';
 import SignIn from './screens/auth/SignIn';
 import SignUp from './screens/auth/SignUp';
 import auth from '@react-native-firebase/auth';
-import { Text } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { User } from './types/User';
+import Tabs from './components/Tabs';
+import AddTask from './screens/app/AddTask';
+import DrawerContent from './components/DrawerContent';
+
 
 function Routes(): React.JSX.Element {
   const Stack = createStackNavigator<RootStackParamList>();
+  const Drawer = createDrawerNavigator<RootDrawerParamList>();
+
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState<User>();
@@ -33,17 +40,15 @@ function Routes(): React.JSX.Element {
     // return null;
     return <></>;
   }
+
+
+
   if (user) {
-    const logOut = () => {
-      auth()
-        .signOut()
-        .then(() => console.log('User signed out!'));
-    };
     return (
-      <>
-        <Text style={{ margin: 40 }}>Welcome</Text>
-        <Text style={{ margin: 40 }} onPress={logOut}>Log out</Text>
-      </>
+      <Drawer.Navigator screenOptions={{ headerShown: false }} drawerContent={(props) => <DrawerContent {...props} />}>
+        <Drawer.Screen name="Tabs" component={Tabs} />
+        <Drawer.Screen name="AddTask" component={AddTask} />
+      </Drawer.Navigator>
     );
   }
 
