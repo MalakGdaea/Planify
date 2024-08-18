@@ -10,12 +10,17 @@ interface InputProps {
     secureTextEntry?: boolean;
     keyboardType?: KeyboardTypeOptions;
     onChangeText?: ((text: string) => void) | undefined;
+    outlined: boolean,
 }
 
 
-const Input = ({ placeholder, keyboardType, onChangeText, ...props }: InputProps) => {
+const Input = ({ placeholder, keyboardType, outlined, onChangeText, ...props }: InputProps) => {
     return (
-        <TextInput onChangeText={onChangeText} placeholder={placeholder} placeholderTextColor={colors.midGray} style={styles.input} keyboardType={keyboardType ?? 'default'} {...props} />
+        <TextInput onChangeText={onChangeText}
+            placeholder={placeholder}
+            placeholderTextColor={colors.midGray}
+            style={[styles.input, outlined ? styles.outlined : {}]}
+            keyboardType={keyboardType ?? 'default'} {...props} />
     );
 };
 

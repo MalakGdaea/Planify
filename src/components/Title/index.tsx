@@ -5,11 +5,12 @@ import styles from './styles';
 
 interface TextProps {
     children: React.ReactNode;
+    type?: string
 }
 
-const Title = ({ children }: TextProps) => {
+const Title = ({ children, type }: TextProps) => {
     return (
-        <Text style={styles.title}>{children}</Text>
+        <Text style={[styles.title, type === 'thin' ? styles.thin : {}]}>{children}</Text>
     );
 };
 

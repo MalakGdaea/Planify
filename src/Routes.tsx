@@ -9,10 +9,12 @@ import SignIn from './screens/auth/SignIn';
 import SignUp from './screens/auth/SignUp';
 import auth from '@react-native-firebase/auth';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { User } from './types/User';
 import Tabs from './components/Tabs';
 import AddTask from './screens/app/AddTask';
 import DrawerContent from './components/DrawerContent';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from './store/user.tsx';
+import { RootState } from './store/index.tsx';
 
 
 function Routes(): React.JSX.Element {
@@ -21,13 +23,11 @@ function Routes(): React.JSX.Element {
 
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState<User>();
-
-  console.log('user => ', user);
-
+  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.user);
   // Handle user state changes
   function onAuthStateChanged(user) {
-    setUser(user);
+    dispatch(setUser(user));
     if (initializing) setInitializing(false);
   }
 
@@ -40,8 +40,6 @@ function Routes(): React.JSX.Element {
     // return null;
     return <></>;
   }
-
-
 
   if (user) {
     return (
