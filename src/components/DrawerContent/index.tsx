@@ -7,11 +7,15 @@ import { Linking, StyleSheet, Text } from 'react-native';
 import colors from '../../constants/colors';
 import auth from '@react-native-firebase/auth';
 import { PRIVACY_POLICY_LINK, TERMS_CONDITIONS_LINK } from '../../constants/links';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../store/user';
 
 function DrawerContent(props: DrawerContentComponentProps) {
     const { navigation } = props;
+    const dispatch = useDispatch();
 
     const logOut = () => {
+        dispatch(setUser(null));
         auth()
             .signOut()
             .then(() => console.log('User signed out!'));

@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../constants/colors';
+import ButtonType from '../../enums/buttonType';
 
-
-const styles = StyleSheet.create({
+const getStyles = (buttonType: ButtonType) => StyleSheet.create({
     container: {
-        backgroundColor: colors.beige,
-        padding: 9,
+        backgroundColor: buttonType === ButtonType.Primary ? colors.PacificBlue : colors.CharlestonGreen,
+        padding: 10,
         borderRadius: 10,
         flexDirection: 'row',
         justifyContent: 'center',
@@ -16,12 +16,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
     },
-    primary: {
-        backgroundColor: colors.beige,
-    },
-    secondary: {
-        backgroundColor: colors.black,
-    },
 });
 
-export default styles;
+export default getStyles;

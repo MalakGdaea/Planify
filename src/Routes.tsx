@@ -16,7 +16,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from './store/user.tsx';
 import { RootState } from './store/index.tsx';
 
-
 function Routes(): React.JSX.Element {
   const Stack = createStackNavigator<RootStackParamList>();
   const Drawer = createDrawerNavigator<RootDrawerParamList>();
@@ -27,6 +26,8 @@ function Routes(): React.JSX.Element {
   const user = useSelector((state: RootState) => state.user);
   // Handle user state changes
   function onAuthStateChanged(user) {
+    console.log("user is ", user);
+
     dispatch(setUser(user));
     if (initializing) setInitializing(false);
   }
@@ -41,7 +42,7 @@ function Routes(): React.JSX.Element {
     return <></>;
   }
 
-  if (user) {
+  if (user?.data) {
     return (
       <Drawer.Navigator screenOptions={{ headerShown: false }} drawerContent={(props) => <DrawerContent {...props} />}>
         <Drawer.Screen name="Tabs" component={Tabs} />

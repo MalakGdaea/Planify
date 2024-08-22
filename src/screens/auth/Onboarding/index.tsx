@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Image, Text } from 'react-native';
 import styles from './styles';
 import Button from '../../../components/Button';
-import buttonType from '../../../constants/buttons';
 import { StackNavigationProp } from '@react-navigation/stack';
 import RootStackParamList from '../../../types/RootStackParamList';
 import { useNavigation } from '@react-navigation/native';
+import ButtonType from '../../../enums/buttonType';
 
 type OnboardingNavigationProp = StackNavigationProp<RootStackParamList, 'Onboarding'>;
 
@@ -20,8 +20,8 @@ function Onboarding(): React.JSX.Element {
             <Text style={styles.title}>Best task management app</Text>
             <Text style={styles.subtitle}>Get organized by sorting out all your tasks
                 and boost you productivity </Text>
-            <Button onPress={() => navigation.navigate('SignIn')} type={buttonType.primary}>Log In </Button>
-            <Button onPress={() => navigation.navigate('SignUp')} type={buttonType.secondary}>Get Started</Button>
+            <Button onPress={() => navigation.navigate('SignIn')} type={ButtonType.Primary}>Log In </Button>
+            <Button onPress={() => navigation.navigate('SignUp')} type={ButtonType.Secondary}>Get Started</Button>
         </View>
     </View>;
 }

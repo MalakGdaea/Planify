@@ -21,10 +21,7 @@ function Tasks(): React.JSX.Element {
     const allCategories: Category = useMemo(() => { return { label: 'All', value: 'all' } }, []);
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(allCategories);
     const [filteredTasks, setFilteredTasks] = useState<Task[]>(tasks ?? []);
-
-    useEffect(() => {
-        categories.unshift(allCategories);
-    }, [allCategories]);
+    const categoriesWithAll = [allCategories, ...categories];
 
     useEffect(() => {
         if (selectedCategory?.label !== allCategories.label) {
@@ -59,7 +56,7 @@ function Tasks(): React.JSX.Element {
                     <View style={{ marginBottom: 24 }}>
                         <Title type='thin'>To Do Tasks</Title>
                         <Categories
-                            categories={categories}
+                            categories={categoriesWithAll}
                             selectedCategory={selectedCategory}
                             onCategoryPress={setSelectedCategory} />
                     </View>}

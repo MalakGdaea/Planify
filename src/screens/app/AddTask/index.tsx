@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Pressable, Image, Text, Alert, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
@@ -39,6 +39,10 @@ function AddTask({ navigation }: AddTaskParams): React.JSX.Element {
         navigation.goBack();
     };
 
+    useEffect(() => {
+        clearInputs();
+    }, []);
+
     const onSubmit = () => {
         if (!title) {
             Alert.alert('Please enter the task title');
@@ -61,7 +65,6 @@ function AddTask({ navigation }: AddTaskParams): React.JSX.Element {
             dispatch(pushTask(addedTask));
             setLoading(false);
             navigation.navigate('Tasks');
-            clearInputs();
         }).catch(error => {
             console.log('error when adding task :>> ', error);
             setLoading(false);

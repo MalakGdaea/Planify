@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     text: {
-        color: colors.black,
+        color: colors.CharlestonGreen,
     },
     row: {
         flexDirection: 'row',

@@ -23,7 +23,7 @@ const style = StyleSheet.create({
         marginTop: 28,
     },
     footerLink: {
-        color: colors.black,
+        color: colors.PacificBlue,
         fontWeight: 'bold',
         fontSize: 15,
     },

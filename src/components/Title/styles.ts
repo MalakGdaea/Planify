@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
     thin: {
         fontWeight: '300',
-        color: colors.blue,
+        color: colors.LightCharlestonGreen,
         paddingHorizontal: 24,
     },
 });

@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     },
     item: {
         fontSize: 13,
-        color: colors.blue,
+        color: colors.PacificBlue,
         borderWidth: 1,
-        borderColor: colors.blue,
+        borderColor: colors.PacificBlue,
         borderRadius: 8,
         padding: 6,
         paddingHorizontal: 12,

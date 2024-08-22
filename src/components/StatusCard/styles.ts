@@ -12,13 +12,13 @@ const getStyles = (type: TaskStatus) => StyleSheet.create({
     },
     label: {
         marginBottom: 13,
-        color: type === TaskStatus.Delayed ? colors.red : colors.blue,
+        color: type === TaskStatus.Delayed ? colors.red : colors.PacificBlue,
         fontSize: 10,
     },
     count: {
         fontSize: 28,
         fontWeight: '500',
-        color: type === TaskStatus.Delayed ? colors.red : colors.blue,
+        color: type === TaskStatus.Delayed ? colors.red : colors.PacificBlue,
         marginBottom: 8,
     },
 });

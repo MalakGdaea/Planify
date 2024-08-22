@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
-import { Alert, Linking, SafeAreaView, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Linking, SafeAreaView, Text, View } from 'react-native';
 import styles from './styles';
 import Button from '../../../components/Button';
 import Title from '../../../components/Title';
 import { StackNavigationProp } from '@react-navigation/stack';
 import RootStackParamList from '../../../types/RootStackParamList';
 import { useNavigation } from '@react-navigation/native';
-import buttonType from '../../../constants/buttons';
 import Checkbox from '../../../components/Checkbox';
 import auth from '@react-native-firebase/auth';
 import { PRIVACY_POLICY_LINK, TERMS_CONDITIONS_LINK } from '../../../constants/links';
 import Input from '../../../components/Input';
 import { User } from '../../../types/User';
 import { ScrollView } from 'react-native-gesture-handler';
+import ButtonType from '../../../enums/buttonType';
+import colors from '../../../constants/colors';
 
 type SignUpNavigationProp = StackNavigationProp<RootStackParamList, 'SignUp'>;
 
 function SignUp(): React.JSX.Element {
+    const [loading, setLoading] = useState<boolean>(false);
     const navigation = useNavigation<SignUpNavigationProp>();
     const [agreed, setAgreed] = useState<boolean>(false);
     const [user, setUser] = useState<User>({ firstName: '', lastName: '', email: '', password: '', conformedPassword: '' });
@@ -33,11 +35,12 @@ function SignUp(): React.JSX.Element {
         if (!areFieldsNotEmpty() || !isPasswordsMatches() || !isTermAgreed()) {
             return;
         }
-
+        setLoading(true);
         auth()
             .createUserWithEmailAndPassword(user.email!, user.password!)
             .then(() => {
                 auth().currentUser!.updateProfile({ displayName: `${user.firstName} ${user.lastName}` });
+                setLoading(false);
             })
             .catch(error => {
                 if (error.code === 'auth/email-already-in-use') {
@@ -106,11 +109,12 @@ function SignUp(): React.JSX.Element {
                 <Text style={styles.conditionsText}>I agree to <Text style={styles.boldUnderline} onPress={() => onLinkPress((TERMS_CONDITIONS_LINK))}>Terms and Conditions</Text>
                     and <Text style={styles.boldUnderline} onPress={() => onLinkPress((PRIVACY_POLICY_LINK))}>Privacy Policy</Text></Text>
             </View>
-            <Button onPress={onSubmit} type={buttonType.secondary}>Create new account</Button>
+            <Button onPress={onSubmit} type={ButtonType.Primary}>Create new account</Button>
             <Text style={styles.footerText}>Already registered?
                 <Text style={styles.footerLink} onPress={() => navigation.navigate('SignIn')}> Sign in!</Text>
             </Text>
         </ScrollView>
+        {loading && <View><ActivityIndicator size="large" color={colors.CharlestonGreen} /></View>}
     </SafeAreaView>;
 }
 

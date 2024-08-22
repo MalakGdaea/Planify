@@ -12,7 +12,7 @@ const style = StyleSheet.create({
         height: 25,
     },
     label: {
-        color: colors.black,
+        color: colors.CharlestonGreen,
         fontSize: 13,
         marginHorizontal: 24,
         fontWeight: '500',

@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: 60,
         width: 60,
-        backgroundColor: colors.black,
+        backgroundColor: colors.PacificBlue,
         borderRadius: 50,
         position: 'absolute',
         right: 24,

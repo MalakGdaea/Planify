@@ -11,12 +11,14 @@ const Tabs = () => {
         <Tab.Navigator screenOptions={{ tabBarShowLabel: false, headerShown: false }}>
             <Tab.Screen name="Home" component={Home} options={{
                 tabBarIcon: ({ focused }) => (
-                    <Image style={styles.icon} source={focused ? require('../../assets/icons/active-home.png') : require('../../assets/icons/home.png')} />
+                    <Image style={styles.icon}
+                        source={focused ? require('../../assets/icons/active-home.png') : require('../../assets/icons/home.png')} />
                 ),
             }} />
             <Tab.Screen name="Tasks" component={Tasks} options={{
                 tabBarIcon: ({ focused }) => (
-                    <Image style={styles.icon} source={focused ? require('../../assets/icons/active-calendar.png') : require('../../assets/icons/calendar.png')} />
+                    <Image style={styles.icon}
+                        source={focused ? require('../../assets/icons/active-calendar.png') : require('../../assets/icons/calendar.png')} />
                 ),
             }} />
         </Tab.Navigator>

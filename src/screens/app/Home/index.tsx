@@ -23,7 +23,6 @@ interface HomeParams {
     navigation: HomeScreenNavigationProp;
 }
 
-
 function Home({ navigation }: HomeParams): React.JSX.Element {
     const user = useSelector((state: RootState) => state.user.data) as User | null;
     const tasks = useSelector((state: RootState) => state.task.data) as Task[];
@@ -61,7 +60,7 @@ function Home({ navigation }: HomeParams): React.JSX.Element {
                 <StatusCard label='Due Deadline' count={counts.DueDeadline} type={TaskStatus.Delayed} />
                 <StatusCard label='Quick Win' count={counts.QuickWin} type={TaskStatus.HasTime} />
             </View>
-            <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('Tasks ')}>
+            <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('Tasks')}>
                 <Text style={styles.title}>Check all my tasks</Text>
                 <Text style={styles.subtitle}>See all tasks and filter them by categories you have selected when creating them</Text>
             </TouchableOpacity>

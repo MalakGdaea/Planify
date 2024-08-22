@@ -1,20 +1,20 @@
 import React from 'react';
 import { TouchableOpacity, Text, GestureResponderEvent, StyleProp, ViewStyle } from 'react-native';
-import styles from './styles';
-import buttonType from '../../constants/buttons';
+import getStyles from './styles';
+import ButtonType from '../../enums/buttonType';
 
 
 interface ButtonProps {
     onPress?: (event: GestureResponderEvent) => void;
     children: React.ReactNode;
-    type?: keyof typeof buttonType;
+    type?: ButtonType;
     style?: StyleProp<ViewStyle>;
 }
 
-const Button = ({ children, onPress, type, style }: ButtonProps) => {
-    const buttonStyle = styles[type || 'primary'];
+const Button = ({ children, onPress, type = ButtonType.Primary, style }: ButtonProps) => {
+    const styles = getStyles(type);
     return (
-        <TouchableOpacity onPress={onPress} style={[styles.container, buttonStyle, style]}>
+        <TouchableOpacity onPress={onPress} style={[styles.container, style]}>
             <Text style={styles.text}>{children}</Text>
         </TouchableOpacity>
     );

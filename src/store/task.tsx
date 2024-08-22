@@ -3,11 +3,11 @@ import { Task } from '../types/Task';
 import { updateTaskInDb } from '../services/taskService';
 
 interface TaskState {
-    data: Task[]; // Explicitly typing the data as an array of Task
+    data: Task[] | null; // Explicitly typing the data as an array of Task
 }
 
 const initialState: TaskState = {
-    data: [], // Initially, the data array is empty
+    data: null, // Initially, the data array is empty
 };
 
 export const taskSlice = createSlice({
@@ -27,6 +27,9 @@ export const taskSlice = createSlice({
             }
         },
         pushTask: (state, action) => {
+            if (!state.data) {
+                state.data = [];
+            }
             state.data.push(action.payload);
         },
     },

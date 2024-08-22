@@ -10,7 +10,7 @@ interface InputProps {
     secureTextEntry?: boolean;
     keyboardType?: KeyboardTypeOptions;
     onChangeText?: ((text: string) => void) | undefined;
-    outlined: boolean,
+    outlined?: boolean,
 }
 
 
