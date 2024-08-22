@@ -44,7 +44,7 @@ function Home({ navigation }: HomeParams): React.JSX.Element {
     useEffect(() => {
         const highPriority = tasks?.filter(
             (task) => task.category?.value === 'important' || task.category?.value === 'urgent').length;
-        const DueDeadline = (tasks.filter((task) => {
+        const DueDeadline = (tasks?.filter((task) => {
             return moment(task?.deadline?.seconds * 1000).isBefore(moment(), 'day');
         })).length;
         const QuickWin = tasks?.filter((task) => task.category?.value === 'quick_task').length;

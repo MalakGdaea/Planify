@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Pressable, Image, Text, Alert, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
@@ -39,10 +39,6 @@ function AddTask({ navigation }: AddTaskParams): React.JSX.Element {
         navigation.goBack();
     };
 
-    useEffect(() => {
-        clearInputs();
-    }, []);
-
     const onSubmit = () => {
         if (!title) {
             Alert.alert('Please enter the task title');
@@ -61,7 +57,7 @@ function AddTask({ navigation }: AddTaskParams): React.JSX.Element {
             checked: false,
             userId: user?.uid,
         }).then((addedTask) => { // here is the error I push undefine
-            console.log('task added ===>', addedTask);
+            clearInputs();
             dispatch(pushTask(addedTask));
             setLoading(false);
             navigation.navigate('Tasks');
@@ -73,6 +69,7 @@ function AddTask({ navigation }: AddTaskParams): React.JSX.Element {
     };
 
     const clearInputs = () => {
+        console.log('clear function called.');
         setTitle('');
         setDeadline(new Date());
         setCategory(null);
@@ -85,7 +82,7 @@ function AddTask({ navigation }: AddTaskParams): React.JSX.Element {
         <ScrollView>
             <Title type="thin">Add New Task</Title>
             <Text style={styles.label}>Describe the task</Text>
-            <Input placeholder='Type here ...' outlined={true} onChangeText={setTitle}></Input>
+            <Input value={title} placeholder='Type here ...' outlined={true} onChangeText={setTitle}></Input>
             <Text style={styles.label}>Type</Text>
             <Categories
                 categories={categories}

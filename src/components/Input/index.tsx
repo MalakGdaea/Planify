@@ -6,6 +6,7 @@ import { KeyboardTypeOptions } from 'react-native';
 
 
 interface InputProps {
+    value?: string,
     placeholder?: string,
     secureTextEntry?: boolean;
     keyboardType?: KeyboardTypeOptions;
@@ -14,10 +15,11 @@ interface InputProps {
 }
 
 
-const Input = ({ placeholder, keyboardType, outlined, onChangeText, ...props }: InputProps) => {
+const Input = ({ value, placeholder, keyboardType, outlined, onChangeText, ...props }: InputProps) => {
     return (
         <TextInput onChangeText={onChangeText}
             placeholder={placeholder}
+            value={value}
             placeholderTextColor={colors.midGray}
             style={[styles.input, outlined ? styles.outlined : {}]}
             keyboardType={keyboardType ?? 'default'} {...props} />
