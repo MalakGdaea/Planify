@@ -26,7 +26,7 @@ To get started with Planify, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/planify.git
+   git clone https://github.com/MalakGdaea/planify.git
 
 2. Navigate to the project directory:
 
@@ -45,25 +45,20 @@ To get started with Planify, follow these steps:
 ## Usage
 Planify is designed to simplify your task management process, helping you stay organized and on top of your responsibilities.
 
-Creating a Task:
-
-Begin by tapping the "Add Task" button located on the main screen.
+- Creating a Task:
+Begin by tapping the "+" circular button.
 Enter the task's name, choose an appropriate category from the provided options, and assign a deadline.
 Save the task to include it in your organized task list.
-Viewing Tasks:
 
-All your tasks are conveniently displayed on the main screen, sorted by category. This allows you to quickly see what needs to be done in each area of your life.
-Editing or Deleting Tasks:
-
-Simply tap on any task to view its details. From there, you can make changes to the task’s name, category, or deadline, or delete the task if it’s no longer needed.
-Planify ensures that your tasks are always at your fingertips, making it easier for you to manage your time and achieve your goals.
+- Viewing Tasks:
+All your tasks are conveniently displayed on the tasks screen, sorted by category. This allows you to quickly see what needs to be done in each area of your life.
 
 ## Technologies Used
 Planify is built with a robust set of tools and frameworks to ensure a seamless and efficient user experience:
 
-React Native: The core of the app, allowing it to run natively on both iOS and Android devices while using a single codebase written in JavaScript.
+- **React Native:** The core of the app, allowing it to run natively on both iOS and Android devices while using a single codebase written in JavaScript.
 
-Redux: Employed for state management, ensuring that the app’s data flow is predictable and easy to debug, especially as the app scales.
+- **Redux:** Employed for state management, ensuring that the app’s data flow is predictable and easy to debug, especially as the app scales.
 
-Firestore: A NoSQL cloud database from Firebase, used to store and sync data for Planify in real-time, allowing users to access their tasks across devices.
+- **Firestore:** A NoSQL cloud database from Firebase, used to store and sync data for Planify in real-time, allowing users to access their tasks across devices.
 
