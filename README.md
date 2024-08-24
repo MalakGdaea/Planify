@@ -11,12 +11,12 @@
 
 ## Screenshots
 
-![Screenshot 1]('./src/assets/screenshot/mainScreen.jpeg)
-![Screenshot 2]('./src/assets/screenshot/signIn.jpeg)
-![Screenshot 3]('./src/assets/screenshot/signUp.jpeg)
-![Screenshot 4]('./src/assets/screenshot/homePage.jpeg)
-![Screenshot 5]('./src/assets/screenshot/addTask.jpeg)
-![Screenshot 6]('./src/assets/screenshot/tasksList.jpeg)
+![Screenshot 1]('https://github.com/MalakGdaea/Planify/tree/master/src/assets/screenshot/mainScreen.jpeg')
+![Screenshot 2]('src/assets/screenshot/signIn.jpeg')
+![Screenshot 3]('src/assets/screenshot/signUp.jpeg')
+![Screenshot 4]('src/assets/screenshot/homePage.jpeg')
+![Screenshot 5]('src/assets/screenshot/addTask.jpeg')
+![Screenshot 6]('src/assets/screenshot/tasksList.jpeg')
 
 
 ## Installation
@@ -52,6 +52,7 @@ Save the task to include it in your organized task list.
 
 - Viewing Tasks:
 All your tasks are conveniently displayed on the tasks screen, sorted by category. This allows you to quickly see what needs to be done in each area of your life.
+
 
 ## Technologies Used
 Planify is built with a robust set of tools and frameworks to ensure a seamless and efficient user experience:
