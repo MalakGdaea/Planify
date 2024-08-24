@@ -11,12 +11,12 @@
 
 ## Screenshots
 
-<img src="src/assets/screenshot/mainScreen.jpeg" alt="Screenshot 1" width="600" height="auto"/>
-<img src="src/assets/screenshot/signIn.jpeg" alt="Screenshot 2" width="600" height="auto"/>
-<img src="src/assets/screenshot/signUp.jpeg" alt="Screenshot 3" width="600" height="auto"/>
-<img src="src/assets/screenshot/homePage.jpeg" alt="Screenshot 4" width="600" height="auto"/>
-<img src="src/assets/screenshot/addTask.jpeg" alt="Screenshot 5" width="600" height="auto"/>
-<img src="src/assets/screenshot/tasksList.jpeg" alt="Screenshot 6" width="600" height="auto"/>
+<img src="src/assets/screenshot/mainScreen.jpeg" alt="Screenshot 1" width="720" height="1280"/>
+<img src="src/assets/screenshot/signIn.jpeg" alt="Screenshot 2" width="720" height="1280"/>
+<img src="src/assets/screenshot/signUp.jpeg" alt="Screenshot 3" width="720" height="1280"/>
+<img src="src/assets/screenshot/homePage.jpeg" alt="Screenshot 4" width="720" height="1280"/>
+<img src="src/assets/screenshot/addTask.jpeg" alt="Screenshot 5" width="720" height="1280"/>
+<img src="src/assets/screenshot/tasksList.jpeg" alt="Screenshot 6" width="720" height="1280"/>
 
 
 
