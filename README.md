@@ -11,12 +11,13 @@
 
 ## Screenshots
 
-![Screenshot 1](src/assets/screenshot/mainScreen.jpeg)
-![Screenshot 2](src/assets/screenshot/signIn.jpeg)
-![Screenshot 3](src/assets/screenshot/signUp.jpeg)
-![Screenshot 4](src/assets/screenshot/homePage.jpeg)
-![Screenshot 5](src/assets/screenshot/addTask.jpeg)
-![Screenshot 6](src/assets/screenshot/tasksList.jpeg)
+<img src="src/assets/screenshot/mainScreen.jpeg" alt="Screenshot 1" width="600" height="auto"/>
+<img src="src/assets/screenshot/signIn.jpeg" alt="Screenshot 2" width="600" height="auto"/>
+<img src="src/assets/screenshot/signUp.jpeg" alt="Screenshot 3" width="600" height="auto"/>
+<img src="src/assets/screenshot/homePage.jpeg" alt="Screenshot 4" width="600" height="auto"/>
+<img src="src/assets/screenshot/addTask.jpeg" alt="Screenshot 5" width="600" height="auto"/>
+<img src="src/assets/screenshot/tasksList.jpeg" alt="Screenshot 6" width="600" height="auto"/>
+
 
 
 ## Installation
