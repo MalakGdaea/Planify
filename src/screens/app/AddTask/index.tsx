@@ -69,7 +69,6 @@ function AddTask({ navigation }: AddTaskParams): React.JSX.Element {
     };
 
     const clearInputs = () => {
-        console.log('clear function called.');
         setTitle('');
         setDeadline(new Date());
         setCategory(null);

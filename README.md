@@ -1,79 +1,69 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Planify
 
-# Getting Started
+**Planify** is a task management app built with React Native, designed to help users create and organize tasks efficiently. With Planify, you can categorize tasks, set deadlines, and manage your time more effectively.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- **Create Tasks:** Easily create tasks that you want to accomplish.
+- **Categorize Tasks:** Assign tasks to specific categories for better organization.
+- **Set Deadlines:** Attach deadlines to tasks to ensure timely completion.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Screenshots
 
-```bash
-# using npm
-npm start
+![Screenshot 1]('./src/assets/screenshot/mainScreen.jpeg)
+![Screenshot 2]('./src/assets/screenshot/signIn.jpeg)
+![Screenshot 3]('./src/assets/screenshot/signUp.jpeg)
+![Screenshot 4]('./src/assets/screenshot/homePage.jpeg)
+![Screenshot 5]('./src/assets/screenshot/addTask.jpeg)
+![Screenshot 6]('./src/assets/screenshot/tasksList.jpeg)
 
-# OR using Yarn
-yarn start
-```
 
-## Step 2: Start your Application
+## Installation
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+To get started with Planify, follow these steps:
 
-### For Android
+1. Clone the repository:
 
-```bash
-# using npm
-npm run android
+   ```bash
+   git clone https://github.com/yourusername/planify.git
 
-# OR using Yarn
-yarn android
-```
+2. Navigate to the project directory:
 
-### For iOS
+   ```bash
+   cd planify
 
-```bash
-# using npm
-npm run ios
+3. Install dependencies
+   ```bash
+   npm install
 
-# OR using Yarn
-yarn ios
-```
+4. Run For Android
+   ```bash
+   npx react-native run-android
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Usage
+Planify is designed to simplify your task management process, helping you stay organized and on top of your responsibilities.
 
-## Step 3: Modifying your App
+Creating a Task:
 
-Now that you have successfully run the app, let's modify it.
+Begin by tapping the "Add Task" button located on the main screen.
+Enter the task's name, choose an appropriate category from the provided options, and assign a deadline.
+Save the task to include it in your organized task list.
+Viewing Tasks:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+All your tasks are conveniently displayed on the main screen, sorted by category. This allows you to quickly see what needs to be done in each area of your life.
+Editing or Deleting Tasks:
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+Simply tap on any task to view its details. From there, you can make changes to the task’s name, category, or deadline, or delete the task if it’s no longer needed.
+Planify ensures that your tasks are always at your fingertips, making it easier for you to manage your time and achieve your goals.
 
-## Congratulations! :tada:
+## Technologies Used
+Planify is built with a robust set of tools and frameworks to ensure a seamless and efficient user experience:
 
-You've successfully run and modified your React Native App. :partying_face:
+React Native: The core of the app, allowing it to run natively on both iOS and Android devices while using a single codebase written in JavaScript.
 
-### Now what?
+Redux: Employed for state management, ensuring that the app’s data flow is predictable and easy to debug, especially as the app scales.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+Firestore: A NoSQL cloud database from Firebase, used to store and sync data for Planify in real-time, allowing users to access their tasks across devices.
 
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
